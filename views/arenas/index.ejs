@@ -1,0 +1,17 @@
+<%- include ("../partials/header") %>
+
+    <div style = "width: 30%; margin: 30px auto;">
+        <a href = "/arenas/new">Add new scene</a>
+
+        <% arenas.forEach(function(arena){ %>
+            <div>
+                <img src = "<%= arena.image %>">
+                <h4><%= arena.name %></h4>
+                <a href = "/arenas/<%= arena._id %>">Details</a>
+            </div>
+        <% }) %>
+
+        <a href = "/">Home</a>
+    </div>
+
+<%- include ("../partials/footer") %>

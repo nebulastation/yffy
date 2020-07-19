@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ARENAS</title>
+    <link rel = "stylesheet" href = "/stylesheets/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <% if(!currentUser){ %>
+        <a href = "/login">Login</a>
+        <a href = "/register">Register</a>
+    <% } else { %>
+        <a href = "#"">Signed in as <%= currentUser.username %></a>
+        <a href = "/logout">Log out</a>
+    <% } %>

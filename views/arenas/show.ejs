@@ -1,0 +1,33 @@
+<%- include ("../partials/header") %>
+    <div style = "width: 30%; margin: 30px auto;">
+            <div>
+                    <h4><a><%= arena.name %></a></h4>
+                    <p><img src = "<%= arena.image %>"></p>
+                    <p><%= arena.description %></p>
+                    <p>
+                        <em>Submitted by</em> <%= arena.author.username %></p>
+                    <% if(currentUser && arena.author.id.equals(currentUser._id)){ %>
+                            <a href = "/campgrounds/<%= arena._id %>/edit">Edit</a>
+                            <form action = "/arenas/<%= arena._id %>?_method=DELETE" method = "POST">
+                                <button >Delete</button>
+                            </form>
+                        <% } %>
+            </div>
+                    <a href = "/arenas/<%= arena._id %>/comments/new">Add new comment</a>
+            <div>
+                <% arena.comments.forEach(function(comment){ %>
+                        <strong><%= comment.author.username %></strong>
+                            <%= comment.text %>
+                        <% if(currentUser && comment.author.id.equals(currentUser._id)){ %>
+                        <a href = "/arenas/<%= arena._id %>/comments/<%= comment._id %>/edit">Edit</a> 
+                        <form id = "deleteComment" action = "/arenas/<%= arena._id %>/comments/<%= comment._id %>?_method=DELETE" method = "POST">
+                            <input type = "submit" value = "Delete">
+                        </form>
+                        <% } %>
+                    <% });%>
+                    
+                    <a href = "/arenas">Back</a>
+            </div>
+</div>
+
+<%- include ("../partials/footer") %>

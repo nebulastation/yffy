@@ -1,0 +1,23 @@
+<%- include ("../partials/header") %>
+
+        <h1 style = "text-align: center">edit <%= arena.name %></h1>
+        <div style = "width: 30%; margin: 30px auto;">
+            <form action = "/arenas/<%= arena._id %>/?_method=PUT" method = "POST">
+                <div>
+                    <input type = "text" name = "arena[name]" value = "<%= arena.name %>">
+                </div>
+                <div>
+                    <input type = "text" name = "arena[image]" value = "<%= arena.image %>">
+                </div>
+                <div>
+                    <input type = "text" name = "arena[description]" value = "<%= arena.description %>">
+                </div>
+                <div>
+                <button>Submit</button>
+                </div>
+            </form>
+            <a href = "/arenas">Back</a>
+        </div>
+
+
+<%- include ("../partials/footer") %>

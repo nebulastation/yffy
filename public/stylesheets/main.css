@@ -1,0 +1,15 @@
+body {
+    background: rgb(198,227,162);
+    background: linear-gradient(90deg, rgba(198,227,162,1) 0%, rgba(181,228,209,1) 100%);
+    font-family: 'Amiri', serif;
+}
+
+img {
+    max-width: 350px;
+    max-height: 500px;
+}
+
+h4 {
+    margin: 0;
+    padding: 0;
+}

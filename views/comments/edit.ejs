@@ -1,0 +1,16 @@
+<%- include ("../partials/header") %>
+
+        <h1 style = "text-align: center">edit comment</h1>
+        <div style = "width: 30%; margin: 30px auto;">
+            <form action = "/arenas/<%= arena_id %>/comments/<%= comment._id %>?_method=PUT" method = "POST">
+                <div>
+                    <input type = "text" name = "comment[text]" value = "<%= comment.text %>">
+                </div>
+                <div>
+                <button>Submit!</button>
+                </div>
+            </form>
+            <a href = "/arenas">Back</a>
+        </div>
+        
+<%- include ("../partials/footer") %>
